@@ -32,15 +32,64 @@ function createHeader(active) {
 function createFooter() {
   return `
     <div class="footer-inner">
-      <div>
-        <strong>OPC Warehouse Solutions</strong><br>
-        Chula Vista, California — nationwide coverage<br>
-        End-to-end warehouse and parts lifecycle partner.
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="${basePath}assets/WSlogo.svg" alt="Warehouse Solutions logo" loading="lazy">
+          <div>
+            <strong>OPC Warehouse Solutions</strong>
+            <p>Operations partner for inventory control, kitting, refurbishment, and logistics programs.</p>
+          </div>
+        </div>
+        <p class="footer-meta">Chula Vista, California — nationwide coverage<br>Safety, QA, and visibility-first execution.</p>
+        <div class="footer-badges">
+          <span class="badge">On-time &gt;98%</span>
+          <span class="badge">Visibility-first logistics</span>
+          <span class="badge">Safety & QA discipline</span>
+        </div>
       </div>
-      <div class="badge-row">
-        <span class="badge">On-time &gt;98%</span>
-        <span class="badge">Visibility-first logistics</span>
-        <span class="badge">Safety & QA discipline</span>
+      <div class="footer-columns">
+        <div>
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="${basePath}solutions.html">Solutions & Services</a></li>
+            <li><a href="${basePath}industries.html">Industries & Use Cases</a></li>
+            <li><a href="${basePath}how-it-works.html">How engagement works</a></li>
+            <li><a href="${basePath}solutions.html#contact">Schedule a walkthrough</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="${basePath}company.html">About OPC</a></li>
+            <li><a href="${basePath}resources/index.html">Resources</a></li>
+            <li><a href="${basePath}sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Engage</h4>
+          <ul>
+            <li><a href="${basePath}request-quote.html">Request a quote</a></li>
+            <li><a href="https://www.google.com/maps/dir/?api=1&destination=505+Main+St+Chula+Vista+CA+91911" target="_blank" rel="noopener">Visit Chula Vista HQ</a></li>
+            <li><a href="${basePath}solutions.html#contact">Talk with a launch lead</a></li>
+            <li><a href="${basePath}request-quote.html#site-cta">Contact operations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="${basePath}resources/index.html">Documentation & insights</a></li>
+            <li><a href="${basePath}how-it-works.html">Engagement SLAs</a></li>
+            <li><a href="${basePath}request-quote.html">Service intake form</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© ${new Date().getFullYear()} OPC Warehouse Solutions. Operations-first warehousing, refurbishment, and logistics programs.</span>
+        <div class="footer-bottom-links">
+          <a href="${basePath}company.html">Company</a>
+          <a href="${basePath}request-quote.html">Engage</a>
+          <a href="${basePath}sitemap.xml">Sitemap</a>
+        </div>
       </div>
     </div>
   `;
@@ -81,7 +130,7 @@ function createCTASection() {
             <select id="contact-service" name="service" required>
               <option value="" disabled selected>Service needed</option>
               <option>Inventory & Storage</option>
-              <option>Complex Parts Programs</option>
+              <option>Parts & Equipment Programs</option>
               <option>Refurbishment</option>
               <option>Shipping & Logistics</option>
               <option>Full program review</option>
