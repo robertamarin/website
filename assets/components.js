@@ -1,9 +1,11 @@
+const basePath = window.location.pathname.includes('/resources/') ? '../' : './';
+
 const NAV_LINKS = [
-  { href: "/solutions.html", label: "Solutions" },
-  { href: "/industries.html", label: "Industries" },
-  { href: "/how-it-works.html", label: "How It Works" },
-  { href: "/company.html", label: "Company" },
-  { href: "/resources/index.html", label: "Resources" },
+  { href: `${basePath}solutions.html`, label: "Solutions" },
+  { href: `${basePath}industries.html`, label: "Industries" },
+  { href: `${basePath}how-it-works.html`, label: "How It Works" },
+  { href: `${basePath}company.html`, label: "Company" },
+  { href: `${basePath}resources/index.html`, label: "Resources" },
   { href: "#contact", label: "Contact", isAnchor: true }
 ];
 
@@ -16,14 +18,14 @@ function createHeader(active) {
 
   return `
     <div class="nav-container">
-      <a class="logo" href="/">
-        <img src="/assets/logo-ws.svg" alt="OPC Warehouse Solutions logo" loading="lazy">
+      <a class="logo" href="${basePath}">
+        <img src="${basePath}assets/logo-ws.svg" alt="OPC Warehouse Solutions logo" loading="lazy">
         <span>OPC Warehouse Solutions</span>
       </a>
       <nav>
         <ul>${links}</ul>
       </nav>
-      <a class="cta-btn" href="/company.html#contact">Request a Quote</a>
+      <a class="cta-btn" href="${basePath}company.html#contact">Request a Quote</a>
     </div>
   `;
 }
