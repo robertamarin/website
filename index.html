@@ -1,1 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OPC Warehouse Solutions | End-to-End Warehouse & Parts Lifecycle Partner</title>
+  <style>
+    :root {
+      --deep-navy: #0c2438;
+      --steel: #1f3c54;
+      --sky: #38bdf8;
+      --light: #f4f7fa;
+      --accent: #8bc34a;
+      --text: #0f172a;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(12, 36, 56, 0.96);
+      color: white;
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .cta-btn {
+      background: linear-gradient(135deg, var(--sky), #14b8a6);
+      color: #0b2033;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.35);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(56, 189, 248, 0.45);
+    }
+
+    .hero {
+      background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08), transparent 25%),
+                  radial-gradient(circle at 80% 0%, rgba(20, 184, 166, 0.12), transparent 22%),
+                  linear-gradient(120deg, #0b2235 0%, #0c2438 60%, #0e2e4a 100%);
+      color: white;
+      padding: 96px 20px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(12,36,56,0) 0%, rgba(12,36,56,0.5) 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: #e1e8f0;
+      margin-bottom: 18px;
+      max-width: 620px;
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .hero-card {
+      padding: 16px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #e7edf5;
+    }
+
+    .hero-card h3 {
+      margin-bottom: 6px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 72px 20px;
+    }
+
+    .section h2 {
+      font-size: 30px;
+      margin-bottom: 14px;
+      color: var(--deep-navy);
+    }
+
+    .section .subtitle {
+      color: #475569;
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e3e9f0;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--steel);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e8f5ff;
+      color: #0b2235;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 18px;
+      color: #4a5a6d;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 26px;
+      align-items: center;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      background: #0f2438;
+      color: white;
+      padding: 18px;
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    .portal-preview {
+      background: linear-gradient(180deg, #0f172a 0%, #0b2235 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 12px 32px rgba(12, 36, 56, 0.3);
+    }
+
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 14px;
+    }
+
+    .timeline {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .timeline-item {
+      margin-bottom: 10px;
+      padding-left: 10px;
+      border-left: 2px solid var(--sky);
+    }
+
+    .callout {
+      background: #f0f9ff;
+      border: 1px solid #d7eafe;
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 10px;
+      color: #0f172a;
+    }
+
+    .contact {
+      background: #0c2438;
+      color: white;
+      border-radius: 18px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: center;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #d6deeb;
+      font-size: 15px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #0b1b2b;
+      color: #d9e5f1;
+      padding: 24px 20px;
+      margin-top: 40px;
+    }
+
+    footer .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: rgba(56,189,248,0.14);
+      color: #e0f6ff;
+      font-size: 13px;
+      border: 1px solid rgba(56,189,248,0.3);
+    }
+
+    @media (max-width: 760px) {
+      nav ul {
+        display: none;
+      }
+      header {
+        position: sticky;
+      }
+      .hero {
+        padding-top: 84px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a class="logo" href="#top">
+        <span style="width:12px;height:12px;background:var(--sky);display:inline-block;border-radius:3px;"></span>
+        OPC Warehouse Solutions
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#company">Company</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta-btn" href="#contact">Request a Program Review</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <div>
+          <div class="tagline">End-to-end warehouse and parts lifecycle partner</div>
+          <h1>We design, operate, and optimize the parts, inventory, and movement backbone for high-value operations.</h1>
+          <p>Based in Chula Vista, California, OPC Warehouse Solutions builds accountable programs that combine engineered materials management, high-visibility logistics, and targeted refurbishment—so your teams stop firefighting and start planning.</p>
+          <div class="badge-row" style="margin-bottom:16px;">
+            <span class="badge">505 Main St, Chula Vista, CA 91911</span>
+            <span class="badge">On-time execution &gt; 98%</span>
+            <span class="badge">Visibility down to each SKU & shipment</span>
+          </div>
+          <a class="cta-btn" href="#contact" style="display:inline-block;margin-top:10px;">Talk to the Solutions Team</a>
+          <div class="hero-highlights">
+            <div class="hero-card">
+              <h3>Inventory & Storage</h3>
+              <p>Slotting, cycle counting, min/max settings, critical spares, and vendor-managed inventory tuned to your demand signals.</p>
+            </div>
+            <div class="hero-card">
+              <h3>Complex Parts Programs</h3>
+              <p>Engineering-grade kitting, BOM validation, OEM coordination, build-to-order, and delivery at point of use.</p>
+            </div>
+            <div class="hero-card">
+              <h3>Refurbishment</h3>
+              <p>Case-by-case rebuilds and cataloged upgrades with OEM partnerships, dedicated teams, and closed-loop QA.</p>
+            </div>
+            <div class="hero-card">
+              <h3>High-Visibility Shipping</h3>
+              <p>Multi-site coverage with granular tracking, proactive exception alerts, accurate ETAs, and proof of delivery.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portal-preview">
+          <h3>Portal preview: live tracking & program telemetry</h3>
+          <p style="color:#cbd5e1;">Customer portal launches Q4 — request access to view live dashboards for inventory health, refurb cycles, and shipment events.</p>
+          <div class="portal-grid">
+            <div class="timeline">
+              <strong style="color:var(--sky);">Shipment visibility</strong>
+              <div class="timeline-item">
+                08:45 — Pick confirmed (Chula Vista DC)
+              </div>
+              <div class="timeline-item">
+                09:10 — In-transit → San Diego hub (ETA 11:05)
+              </div>
+              <div class="timeline-item">
+                09:52 — Exception: route delay, new ETA 11:30 (alert sent)
+              </div>
+              <div class="timeline-item">
+                11:18 — Arrived hub, outbound lane booked
+              </div>
+            </div>
+            <div class="timeline">
+              <strong style="color:var(--accent);">Inventory health</strong>
+              <div class="timeline-item">Critical spares: 99.4% plan adherence</div>
+              <div class="timeline-item">Cycle count accuracy: 99.8%</div>
+              <div class="timeline-item">Kitting SLA: 24h for 96% of orders</div>
+              <div class="timeline-item">Refurb queue: 14 units, avg 3.1 days</div>
+            </div>
+          </div>
+          <div class="callout">Need real-time access? We integrate with your WMS/TMS and surface milestones, ETAs, and exceptions in one command view.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions" class="section">
+      <h2>Solutions & Services</h2>
+      <p class="subtitle">Program-level ownership across inventory, parts, refurbishment, and movement.</p>
+      <div class="grid">
+        <div class="card">
+          <span class="pill">Inventory & Storage Management</span>
+          <h3>Problem → approach → outcomes</h3>
+          <ul>
+            <li><strong>Problem:</strong> Stockouts, overbuys, and firefighting across SKUs and sites.</li>
+            <li><strong>Approach:</strong> Slotting design, cycle counting cadence, min/max governance, vendor-managed inventory, critical spares programs.</li>
+            <li><strong>Outcomes:</strong> 20-40% expedite reduction, cycle-count accuracy &gt;99.5%, spares coverage with clear ownership.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="pill">Complex Parts & Equipment Programs</span>
+          <h3>Problem → approach → outcomes</h3>
+          <ul>
+            <li><strong>Problem:</strong> Engineering-grade kits and builds stall because suppliers, BOMs, and schedules don’t align.</li>
+            <li><strong>Approach:</strong> Vendor coordination, BOM validation, build-to-order, QC, and delivery at point of use.</li>
+            <li><strong>Outcomes:</strong> Lead-time reduction 15-30%, kit accuracy &gt;99%, fewer line-down incidents.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="pill">Refurbishment & Lifecycle Programs</span>
+          <h3>Problem → approach → outcomes</h3>
+          <ul>
+            <li><strong>Problem:</strong> Aging assets and parts queues tie up capital and risk downtime.</li>
+            <li><strong>Approach:</strong> Case-by-case rebuilds, OEM partnerships, dedicated teams for complex initiatives, streamlined catalogs for routine repairs.</li>
+            <li><strong>Outcomes:</strong> Turnaround time predictability, asset life extension, controlled cost per rebuild.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="pill">Shipping & High-Visibility Logistics</span>
+          <h3>Problem → approach → outcomes</h3>
+          <ul>
+            <li><strong>Problem:</strong> High-value inventory moves with low visibility and poor exception handling.</li>
+            <li><strong>Approach:</strong> Multi-site, end-to-end coverage; proactive exception alerts; accurate ETAs; POD and chain-of-custody proof.</li>
+            <li><strong>Outcomes:</strong> Traceability for every move, fewer expedites, confident field and production schedules.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" class="section" style="background: var(--light);">
+      <h2>Industries & Use Cases</h2>
+      <p class="subtitle">Tailored operating playbooks for the environments where downtime is expensive.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>E-commerce fulfillment</h3>
+          <p>Stabilize pick accuracy, accelerate put-away, and keep critical spares ready for automation equipment.</p>
+          <ul>
+            <li>Slotting and replenishment tuned to order profiles</li>
+            <li>Critical spares mapped to automation uptime</li>
+            <li>Exception-ready shipping for peak events</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Manufacturing & OEM networks</h3>
+          <p>BOM-accurate kits, calibrated Kanban, and refurbishment programs that protect throughput.</p>
+          <ul>
+            <li>Build-to-order kits with QA checkpoints</li>
+            <li>Vendor-managed inventory with governance</li>
+            <li>Lifecycle programs for tools, fixtures, and parts</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>3PLs & distribution</h3>
+          <p>Shared-site visibility, standardized procedures, and cross-dock shipping with reliable ETAs.</p>
+          <ul>
+            <li>Network-wide tracking and alerts</li>
+            <li>Cycle counting and slotting standards</li>
+            <li>Carrier and lane performance reporting</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Field service & heavy equipment</h3>
+          <p>Kitting and staging for field crews, refurbishment of high-value assemblies, and rapid exception response.</p>
+          <ul>
+            <li>Point-of-use deliveries with POD</li>
+            <li>Refurbishment queues with clear ETAs</li>
+            <li>Critical spares stocking by site and route</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <h2>How engagement works</h2>
+      <p class="subtitle">Program design with clear phases, ownership, and telemetry.</p>
+      <div class="split">
+        <div>
+          <ol style="padding-left:18px;color:#334155;">
+            <li><strong>Assess.</strong> Rapid current-state review, data capture, and on-site walkthroughs.</li>
+            <li><strong>Design.</strong> Operating model with SLAs, roles, data integrations, and governance.</li>
+            <li><strong>Pilot.</strong> Limited-scope launch with daily metrics and exception playbooks.</li>
+            <li><strong>Scale.</strong> Roll-out by site or program; dedicated teams for complex initiatives.</li>
+            <li><strong>Optimize.</strong> Continuous improvement with quarterly reviews, KPI scorecards, and playbook updates.</li>
+          </ol>
+          <div class="callout" style="margin-top:14px;">Program or managed service? We clarify ownership, cadence, and deliverables up front so you know exactly who runs what.</div>
+        </div>
+        <div class="portal-preview">
+          <h3>Operational dashboard</h3>
+          <p style="color:#cbd5e1;">Scorecards and drill-downs keep leaders and supervisors aligned.</p>
+          <div class="stats">
+            <div class="stat">
+              <strong>99.5%</strong>
+              Cycle-count accuracy
+            </div>
+            <div class="stat">
+              <strong>15-30%</strong>
+              Lead-time reduction on engineered kits
+            </div>
+            <div class="stat">
+              <strong>24/7</strong>
+              Exception alerts with accountable owners
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="company" class="section" style="background: var(--light);">
+      <h2>Why OPC Warehouse Solutions</h2>
+      <p class="subtitle">Industrial discipline, traceable execution, and OEM-backed partnerships.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Accountable programs</h3>
+          <p>Single partner for design, build, move, and maintain. We own the lifecycle, not just tasks.</p>
+        </div>
+        <div class="card">
+          <h3>Process & safety</h3>
+          <p>Documented SOPs, safety-first culture, and audit-ready traceability for every movement.</p>
+        </div>
+        <div class="card">
+          <h3>Engineering + operations</h3>
+          <p>Materials engineers, program managers, and warehouse operators aligned to your KPIs.</p>
+        </div>
+        <div class="card">
+          <h3>OEM and carrier partnerships</h3>
+          <p>Structured relationships to secure parts, accelerate refurb, and protect transit performance.</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:18px;">Headquartered at 505 Main St, Chula Vista, CA — serving multi-site programs nationwide.</div>
+    </section>
+
+    <section id="resources" class="section">
+      <h2>Resources & Insights</h2>
+      <p class="subtitle">Number-driven briefs to help teams decide faster.</p>
+      <div class="grid">
+        <div class="card">
+          <span class="pill">Whitepaper</span>
+          <h3>Reducing downtime with structured refurb programs</h3>
+          <p>How dedicated initiative teams and OEM partnerships cut unplanned outages.</p>
+        </div>
+        <div class="card">
+          <span class="pill">One-pager</span>
+          <h3>High-visibility tracking that reduces expedite spend</h3>
+          <p>Examples of proactive alerts and ETA accuracy driving better production schedules.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Case snapshot</span>
+          <h3>Critical spares coverage for a multi-site network</h3>
+          <p>99% availability across 6 locations with min/max governance and VMI.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="contact">
+        <div>
+          <h2 style="color:white;">Request a program review</h2>
+          <p style="color:#d8e8f7;">Tell us about your sites, SKUs, and pain points. We respond within one business day.</p>
+          <div class="badge-row" style="margin-top:12px;">
+            <span class="badge">Chula Vista HQ</span>
+            <span class="badge">Dedicated launch teams</span>
+            <span class="badge">Portal access (beta)</span>
+          </div>
+        </div>
+        <form>
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Work email" required>
+          <input type="text" name="company" placeholder="Company" required>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px,1fr));gap:10px;">
+            <select name="service" required>
+              <option value="" disabled selected>Service needed</option>
+              <option>Inventory & Storage</option>
+              <option>Complex Parts Programs</option>
+              <option>Refurbishment</option>
+              <option>Shipping & Logistics</option>
+              <option>Full program review</option>
+            </select>
+            <select name="scale" required>
+              <option value="" disabled selected>Scale</option>
+              <option>Single site</option>
+              <option>2-5 sites</option>
+              <option>6-10 sites</option>
+              <option>10+ sites</option>
+            </select>
+          </div>
+          <textarea name="pain" placeholder="Current pain points and timelines"></textarea>
+          <button type="submit" class="cta-btn" style="width:100%;text-align:center;">Submit request</button>
+          <p style="color:#d8e8f7;font-size:13px;">We’ll schedule a discovery call and share a tailored program sketch within 48 hours.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>OPC Warehouse Solutions</strong><br>
+        505 Main St, Chula Vista, CA 91911<br>
+        End-to-end warehouse and parts lifecycle partner.
+      </div>
+      <div class="badge-row">
+        <span class="badge">On-time &gt;98%</span>
+        <span class="badge">Visibility-first logistics</span>
+        <span class="badge">Safety & QA discipline</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
