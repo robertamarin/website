@@ -1,4 +1,5 @@
-const basePath = window.location.pathname.includes('/resources/') ? '../' : './';
+const isResourcePage = window.location.pathname.includes('/resources/');
+const basePath = isResourcePage ? '../' : './';
 
 const NAV_LINKS = [
   { href: `${basePath}solutions.html`, label: "Solutions" },
@@ -18,9 +19,9 @@ function createHeader(active) {
 
   return `
     <div class="nav-container">
-      <a class="logo" href="${basePath}">
-        <img src="${basePath}assets/logo-ws.svg" alt="OPC Warehouse Solutions logo" loading="lazy">
-        <span>OPC Warehouse Solutions</span>
+      <a class="logo" href="${basePath}" aria-label="OPC Warehouse Solutions home">
+        <img src="${basePath}assets/WSlogo.svg" alt="Warehouse Solutions logo" loading="lazy">
+        <span class="sr-only">OPC Warehouse Solutions</span>
       </a>
       <nav>
         <ul>${links}</ul>
@@ -113,52 +114,6 @@ function injectCommon(active) {
   if (header) header.innerHTML = createHeader(active);
   if (footer) footer.innerHTML = createFooter();
   if (cta) cta.innerHTML = createCTASection();
-}
-
-function operationsPreview() {
-  return `
-    <div class="ops-panel" aria-label="Operations preview">
-      <div class="ops-header">
-        <div>
-          <strong>Operations command snapshot</strong>
-          <span style="display:block;color:#c8d8e8;font-size:13px;">Signals our team uses every shift</span>
-        </div>
-        <span style="color: var(--sky); font-weight: 700;">Live</span>
-      </div>
-      <div class="ops-grid">
-        <div class="metric-tile">
-          <strong>99.6%</strong>
-          <small>Cycle-count accuracy</small>
-        </div>
-        <div class="metric-tile">
-          <strong>18 hrs</strong>
-          <small>Median refurb turn</small>
-        </div>
-        <div class="metric-tile">
-          <strong>12 lanes</strong>
-          <small>Dedicated outbound today</small>
-        </div>
-        <div class="metric-tile">
-          <strong>0</strong>
-          <small>Expedite-trigger events pending</small>
-        </div>
-      </div>
-      <div class="ops-log">
-        <div class="log-item">
-          <strong>08:10</strong>
-          <div>Kit 3421 sealed for OEM audit; QA log attached and staged for courier.</div>
-        </div>
-        <div class="log-item">
-          <strong>08:35</strong>
-          <div>Critical spare min/max reset for Line B after demand spike; vendor PO released.</div>
-        </div>
-        <div class="log-item">
-          <strong>09:05</strong>
-          <div>Chula Vista dock 3 → Phoenix lane switched to sealed totes due to weather risk.</div>
-        </div>
-      </div>
-    </div>
-  `;
 }
 
 // Accessibility helper

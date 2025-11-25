@@ -18,36 +18,69 @@
   <main>
     <section class="section">
       <div class="split">
-        <div>
-          <ol style="padding-left:18px;color:#334155;">
-            <li><strong>Assess.</strong> Rapid current-state review, data capture, and on-site walkthroughs.</li>
-            <li><strong>Design.</strong> Operating model with SLAs, roles, data integrations, and governance.</li>
-            <li><strong>Pilot.</strong> Limited-scope launch with daily metrics and exception playbooks.</li>
-            <li><strong>Scale.</strong> Roll-out by site or program; dedicated teams for complex initiatives.</li>
-            <li><strong>Optimize.</strong> Continuous improvement with quarterly reviews, KPI scorecards, and playbook updates.</li>
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Engagement cadence</p>
+              <h2 style="margin:0;">Structured launch through continuous improvement</h2>
+            </div>
+          </div>
+          <ol style="padding-left:18px;color:#dbe7f6;display:grid;gap:10px;">
+            <li><strong>Assess.</strong> Current-state review, on-site walkthroughs, and inventory/parts data capture.</li>
+            <li><strong>Design.</strong> SLAs, roles, QA controls, and data handoffs codified into a control plan.</li>
+            <li><strong>Pilot.</strong> Limited-scope launch with daily metrics, exception routing, and QA proofs.</li>
+            <li><strong>Scale.</strong> Roll-out by site or program with dedicated teams for complex initiatives.</li>
+            <li><strong>Optimize.</strong> Quarterly reviews with KPI scorecards, supplier feedback, and playbook updates.</li>
           </ol>
-          <div class="callout" style="margin-top:14px;">Program or managed service? We clarify ownership, cadence, and deliverables up front so you know exactly who runs what.</div>
+          <div class="callout" style="margin-top:14px; color:#dbe7f6; border:1px solid rgba(255,255,255,0.18); background:rgba(255,255,255,0.06);">Program or managed service? We clarify ownership, cadence, and deliverables up front so you know exactly who runs what.</div>
         </div>
-        <div>
-          <div class="portal-preview">
-            <h3>Operational dashboard</h3>
-            <p style="color:#cbd5e1;">Scorecards and drill-downs keep leaders and supervisors aligned.</p>
-            <div class="stats">
-              <div class="stat">
-                <strong>99.5%</strong>
-                Cycle-count accuracy
+        <div class="panel-stack">
+          <div class="panel">
+            <div class="panel-header">
+              <span>Control blueprint</span>
+              <span class="pill">QA + Safety</span>
+            </div>
+            <div class="checklist">
+              <li>Gate checks for inbound, storage, refurb, outbound</li>
+              <li>Data handoffs: ASN, BOM, carrier milestones, POD</li>
+              <li>Escalation and exception routing with owners</li>
+              <li>Photo/QA evidence tied to shipments and refurb lots</li>
+            </div>
+          </div>
+          <div class="panel metric-panel">
+            <div>
+              <small>On-time departures</small>
+              <strong>98.6%</strong>
+            </div>
+            <div>
+              <small>Kit accuracy</small>
+              <strong>99.4%</strong>
+            </div>
+            <div>
+              <small>Refurb median turn</small>
+              <strong>18 hrs</strong>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <span>Communication rhythm</span>
+              <span class="pill">Leadership-ready</span>
+            </div>
+            <div class="stage-grid">
+              <div>
+                <strong>Daily</strong>
+                <p>Operational huddles, exceptions cleared, QA proofs logged.</p>
               </div>
-              <div class="stat">
-                <strong>15-30%</strong>
-                Lead-time reduction on engineered kits
+              <div>
+                <strong>Weekly</strong>
+                <p>Supplier/carrier scorecards, action items, and backlog review.</p>
               </div>
-              <div class="stat">
-                <strong>24/7</strong>
-                Exception alerts with accountable owners
+              <div>
+                <strong>Quarterly</strong>
+                <p>Program performance, cost/turn analysis, and roadmap updates.</p>
               </div>
             </div>
           </div>
-          <div style="margin-top:16px;" id="ops-preview-inline"></div>
         </div>
       </div>
     </section>
@@ -55,10 +88,6 @@
   <div id="site-cta"></div>
   <footer id="site-footer"></footer>
   <script src="assets/components.js"></script>
-  <script>
-    injectCommon('how-it-works');
-    const previewInline = document.getElementById('ops-preview-inline');
-    if (previewInline) previewInline.innerHTML = operationsPreview();
-  </script>
+  <script>injectCommon('how-it-works');</script>
 </body>
 </html>
