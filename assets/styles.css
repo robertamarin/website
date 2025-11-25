@@ -26,11 +26,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(10, 25, 41, 0.94);
-  color: white;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  background: white;
+  color: var(--text);
+  border-bottom: 1px solid rgba(12, 24, 36, 0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 .nav-container {
@@ -48,14 +47,15 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: white;
+  color: var(--text);
   text-decoration: none;
+  margin-left: 22px;
 }
 
 .logo img {
-  height: 38px;
+  height: 152px;
   width: auto;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
 }
 
 nav ul {
@@ -67,7 +67,7 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: var(--text);
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 6px;
@@ -76,7 +76,7 @@ nav a {
 
 nav a:hover,
 nav a.active {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(12, 24, 36, 0.08);
 }
 
 .cta-btn {

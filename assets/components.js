@@ -6,27 +6,25 @@ const NAV_LINKS = [
   { href: `${basePath}industries.html`, label: "Industries" },
   { href: `${basePath}how-it-works.html`, label: "How It Works" },
   { href: `${basePath}company.html`, label: "Company" },
-  { href: `${basePath}resources/index.html`, label: "Resources" },
-  { href: "#contact", label: "Contact", isAnchor: true }
+  { href: `${basePath}resources/index.html`, label: "Resources" }
 ];
 
 function createHeader(active) {
   const links = NAV_LINKS.map(link => {
-    const activeClass = !link.isAnchor && active === link.label.toLowerCase().replace(/\s+/g, '-') ? 'active' : '';
-    const href = link.isAnchor ? '#contact' : link.href;
-    return `<li><a class="${activeClass}" href="${href}">${link.label}</a></li>`;
+    const activeClass = active === link.label.toLowerCase().replace(/\s+/g, '-') ? 'active' : '';
+    return `<li><a class="${activeClass}" href="${link.href}">${link.label}</a></li>`;
   }).join('');
 
   return `
     <div class="nav-container">
-      <a class="logo" href="${basePath}" aria-label="OPC Warehouse Solutions home">
+      <a class="logo" href="${basePath}index.html" aria-label="OPC Warehouse Solutions home">
         <img src="${basePath}assets/WSlogo.svg" alt="Warehouse Solutions logo" loading="lazy">
         <span class="sr-only">OPC Warehouse Solutions</span>
       </a>
       <nav>
         <ul>${links}</ul>
       </nav>
-      <a class="cta-btn" href="${basePath}company.html#contact">Request a Quote</a>
+      <a class="cta-btn" href="${basePath}request-quote.html">Request a Quote</a>
     </div>
   `;
 }
