@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OPC – How It Works</title>
+  <meta name="description" content="See how OPC Warehouse Solutions designs, pilots, and scales warehouse and logistics programs." />
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <div class="page-title">
+    <div class="inner">
+      <h1>How engagement works</h1>
+      <p>Program design with clear phases, ownership, and telemetry.</p>
+    </div>
+  </div>
+  <main>
+    <section class="section">
+      <div class="split">
+        <div>
+          <ol style="padding-left:18px;color:#334155;">
+            <li><strong>Assess.</strong> Rapid current-state review, data capture, and on-site walkthroughs.</li>
+            <li><strong>Design.</strong> Operating model with SLAs, roles, data integrations, and governance.</li>
+            <li><strong>Pilot.</strong> Limited-scope launch with daily metrics and exception playbooks.</li>
+            <li><strong>Scale.</strong> Roll-out by site or program; dedicated teams for complex initiatives.</li>
+            <li><strong>Optimize.</strong> Continuous improvement with quarterly reviews, KPI scorecards, and playbook updates.</li>
+          </ol>
+          <div class="callout" style="margin-top:14px;">Program or managed service? We clarify ownership, cadence, and deliverables up front so you know exactly who runs what.</div>
+        </div>
+        <div>
+          <div class="portal-preview">
+            <h3>Operational dashboard</h3>
+            <p style="color:#cbd5e1;">Scorecards and drill-downs keep leaders and supervisors aligned.</p>
+            <div class="stats">
+              <div class="stat">
+                <strong>99.5%</strong>
+                Cycle-count accuracy
+              </div>
+              <div class="stat">
+                <strong>15-30%</strong>
+                Lead-time reduction on engineered kits
+              </div>
+              <div class="stat">
+                <strong>24/7</strong>
+                Exception alerts with accountable owners
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:16px;" id="ops-preview-inline"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-cta"></div>
+  <footer id="site-footer"></footer>
+  <script src="/assets/components.js"></script>
+  <script>
+    injectCommon('how-it-works');
+    const previewInline = document.getElementById('ops-preview-inline');
+    if (previewInline) previewInline.innerHTML = operationsPreview();
+  </script>
+</body>
+</html>
