@@ -54,6 +54,7 @@ function createFooter() {
             <li><a href="${basePath}solutions.html">Solutions & Services</a></li>
             <li><a href="${basePath}industries.html">Industries & Use Cases</a></li>
             <li><a href="${basePath}how-it-works.html">How engagement works</a></li>
+            <li><a href="${basePath}solutions.html#contact">Schedule a walkthrough</a></li>
           </ul>
         </div>
         <div>
@@ -70,7 +71,24 @@ function createFooter() {
             <li><a href="${basePath}request-quote.html">Request a quote</a></li>
             <li><a href="https://www.google.com/maps/dir/?api=1&destination=505+Main+St+Chula+Vista+CA+91911" target="_blank" rel="noopener">Visit Chula Vista HQ</a></li>
             <li><a href="${basePath}solutions.html#contact">Talk with a launch lead</a></li>
+            <li><a href="${basePath}request-quote.html#site-cta">Contact operations</a></li>
           </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="${basePath}resources/index.html">Documentation & insights</a></li>
+            <li><a href="${basePath}how-it-works.html">Engagement SLAs</a></li>
+            <li><a href="${basePath}request-quote.html">Service intake form</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© ${new Date().getFullYear()} OPC Warehouse Solutions. Operations-first warehousing, refurbishment, and logistics programs.</span>
+        <div class="footer-bottom-links">
+          <a href="${basePath}company.html">Company</a>
+          <a href="${basePath}request-quote.html">Engage</a>
+          <a href="${basePath}sitemap.xml">Sitemap</a>
         </div>
       </div>
     </div>

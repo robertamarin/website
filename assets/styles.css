@@ -254,6 +254,7 @@ nav a.active {
 
 .hero-visual {
   min-height: 360px;
+  aspect-ratio: 7 / 5;
   border-radius: 18px;
   background: linear-gradient(145deg, rgba(76, 192, 255, 0.15), rgba(20, 184, 166, 0.12)),
               radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 30%),
@@ -262,13 +263,16 @@ nav a.active {
   box-shadow: 0 22px 40px rgba(0,0,0,0.28);
   display: grid;
   overflow: hidden;
+  padding: 10px;
 }
 
 .hero-visual img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  border-radius: 12px;
+  background: rgba(10, 20, 33, 0.5);
 }
 
 .image-placeholder {
@@ -454,7 +458,7 @@ nav a.active {
   line-height: 1.4;
 }
 
-.footer-columns {
+.footer-columns { 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px;
@@ -474,9 +478,34 @@ nav a.active {
   gap: 6px;
 }
 
-.footer-columns a {
+.footer-columns a { 
   color: #cfe1f2;
   text-decoration: none;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #c9d9ec;
+}
+
+.footer-bottom-links {
+  display: inline-flex;
+  gap: 12px;
+}
+
+.footer-bottom a {
+  color: #cfe1f2;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #4cc0ff;
 }
 
 .footer-columns a:hover {
@@ -681,6 +710,7 @@ footer {
 
 .visual-strip .image-placeholder {
   min-height: 200px;
+  aspect-ratio: 4 / 3;
   border-radius: 14px;
   background: rgba(8, 20, 33, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -691,6 +721,6 @@ footer {
 .visual-strip .image-placeholder img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
