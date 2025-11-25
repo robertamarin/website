@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" role="img" aria-label="WS logo">
+  <defs>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1a2b" />
+      <stop offset="100%" stop-color="#143450" />
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="177" height="45" rx="10" fill="url(#steel)" stroke="#56c0ff" stroke-width="3" />
+  <path fill="#e8f3ff" d="M42 14.5h11.5l5.3 17 5.3-17h11.3l-9.2 24.8H51.4L42 14.5Zm49.8 0H103l6.6 11.2 6.6-11.2h11.1l-11.6 18.9v5.9H92.7v-5.9L81.8 14.5Z" />
+</svg>
