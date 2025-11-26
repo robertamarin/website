@@ -60,6 +60,23 @@ header {
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
 }
 
+.logo-lockup {
+  display: grid;
+  gap: 2px;
+  color: var(--text);
+}
+
+.logo-lockup strong {
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.logo-lockup span {
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #42546a;
+}
+
 nav ul {
   list-style: none;
   display: flex;
