@@ -34,7 +34,7 @@ function createFooter() {
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="${basePath}assets/WSlogo.svg" alt="Warehouse Solutions logo" loading="lazy">
+          <img src="${basePath}assets/LogoOnly.svg" alt="OPC Warehouse Solutions monogram" loading="lazy">
           <div>
             <strong>OPC Warehouse Solutions</strong>
             <p>Operations partner for inventory control, kitting, refurbishment, and logistics programs.</p>
@@ -54,15 +54,6 @@ function createFooter() {
             <li><a href="${basePath}solutions.html">Solutions & Services</a></li>
             <li><a href="${basePath}industries.html">Industries & Use Cases</a></li>
             <li><a href="${basePath}how-it-works.html">How engagement works</a></li>
-            <li><a href="${basePath}request-quote.html#contact">Schedule a walkthrough</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="${basePath}company.html">About OPC</a></li>
-            <li><a href="${basePath}resources/index.html">Resources</a></li>
-            <li><a href="${basePath}sitemap.xml">Sitemap</a></li>
           </ul>
         </div>
         <div>
@@ -70,28 +61,25 @@ function createFooter() {
           <ul>
             <li><a href="${basePath}request-quote.html">Request a quote</a></li>
             <li><a href="https://www.google.com/maps/dir/?api=1&destination=505+Main+St+Chula+Vista+CA+91911" target="_blank" rel="noopener">Visit Chula Vista HQ</a></li>
-            <li><a href="${basePath}request-quote.html#contact">Talk with a launch lead</a></li>
-            <li><a href="${basePath}request-quote.html#site-cta">Contact operations</a></li>
+            <li><a href="${basePath}request-quote.html#contact">Schedule a walkthrough</a></li>
           </ul>
         </div>
         <div>
-          <h4>Support</h4>
+          <h4>Company & Resources</h4>
           <ul>
-            <li><a href="${basePath}resources/index.html">Documentation & insights</a></li>
-            <li><a href="${basePath}how-it-works.html">Engagement SLAs</a></li>
-            <li><a href="${basePath}request-quote.html">Service intake form</a></li>
+            <li><a href="${basePath}company.html">About OPC</a></li>
+            <li><a href="${basePath}resources/index.html">Resources hub</a></li>
             <li><a href="${basePath}resources/case-snapshot.html">Case snapshots</a></li>
             <li><a href="${basePath}resources/one-pager.html">Program one-pager</a></li>
-            <li><a href="${basePath}resources/whitepaper.html">Logistics whitepaper</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© ${new Date().getFullYear()} OPC Warehouse Solutions. Operations-first warehousing, refurbishment, and logistics programs.</span>
         <div class="footer-bottom-links">
-          <a href="${basePath}company.html">Company</a>
+          <a href="${basePath}solutions.html">Solutions</a>
           <a href="${basePath}request-quote.html">Engage</a>
-          <a href="${basePath}sitemap.xml">Sitemap</a>
+          <a href="${basePath}resources/index.html">Resources</a>
         </div>
       </div>
     </div>
