@@ -19,9 +19,17 @@ function createHeader(active) {
     <div class="nav-container">
       <a class="logo" href="${basePath}index.html" aria-label="OPC Warehouse Solutions home">
         <img src="${basePath}assets/WSlogo.svg" alt="Warehouse Solutions logo" loading="lazy">
-        <span class="sr-only">OPC Warehouse Solutions</span>
+        <div class="logo-lockup">
+          <strong>OPC</strong>
+          <span>Warehouse Solutions</span>
+        </div>
       </a>
-      <nav>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primary-nav">
         <ul>${links}</ul>
       </nav>
       <a class="cta-btn" href="${basePath}request-quote.html">Request a Quote</a>
@@ -162,6 +170,35 @@ function injectCommon(active) {
   if (header) header.innerHTML = createHeader(active);
   if (footer) footer.innerHTML = createFooter();
   if (cta) cta.innerHTML = createCTASection();
+
+  setupNavigation();
+}
+
+function setupNavigation() {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+
+  const nav = header.querySelector('nav');
+  const toggle = header.querySelector('.nav-toggle');
+  if (!nav || !toggle) return;
+
+  const closeMenu = () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  };
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.classList.toggle('nav-open', isOpen);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 980) {
+      closeMenu();
+    }
+  });
 }
 
 // Accessibility helper
