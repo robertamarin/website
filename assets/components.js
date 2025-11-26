@@ -19,9 +19,13 @@ function createHeader(active) {
     <div class="nav-container">
       <a class="logo" href="${basePath}index.html" aria-label="OPC Warehouse Solutions home">
         <img src="${basePath}assets/WSlogo.svg" alt="Warehouse Solutions logo" loading="lazy">
-        <span class="sr-only">OPC Warehouse Solutions</span>
       </a>
-      <nav>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primary-nav">
         <ul>${links}</ul>
       </nav>
       <a class="cta-btn" href="${basePath}request-quote.html">Request a Quote</a>
@@ -54,42 +58,31 @@ function createFooter() {
             <li><a href="${basePath}solutions.html">Solutions & Services</a></li>
             <li><a href="${basePath}industries.html">Industries & Use Cases</a></li>
             <li><a href="${basePath}how-it-works.html">How Engagement Works</a></li>
-            <li><a href="${basePath}request-quote.html#contact">Schedule a Walkthrough</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="${basePath}company.html">About OPC</a></li>
-            <li><a href="${basePath}resources/index.html">Resources</a></li>
-            <li><a href="${basePath}sitemap.xml">Sitemap</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Engage</h4>
-          <ul>
             <li><a href="${basePath}request-quote.html">Request a quote</a></li>
-            <li><a href="https://www.google.com/maps/dir/?api=1&destination=505+Main+St+Chula+Vista+CA+91911" target="_blank" rel="noopener">Visit Chula Vista HQ</a></li>
-            <li><a href="${basePath}request-quote.html#contact">Schedule a walkthrough</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Company & Resources</h4>
-          <ul>
-            <li><a href="${basePath}resources/index.html">Documentation & Insights</a></li>
-            <li><a href="${basePath}how-it-works.html">Engagement SLAs</a></li>
-            <li><a href="${basePath}request-quote.html">Service Intake Form</a></li>
-            <li><a href="${basePath}resources/case-snapshot.html">Case snapshots</a></li>
-            <li><a href="${basePath}resources/one-pager.html">Program one-pager</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© ${new Date().getFullYear()} OPC Warehouse Solutions. Operations-first warehousing, refurbishment, and logistics programs.</span>
-        <div class="footer-bottom-links">
-          <a href="${basePath}solutions.html">Solutions</a>
-          <a href="${basePath}request-quote.html">Engage</a>
-          <a href="${basePath}resources/index.html">Resources</a>
+        <div class="footer-stack">
+          <div>
+            <h4>Engage</h4>
+            <ul>
+              <li><a href="${basePath}request-quote.html">Request a quote</a></li>
+              <li><a href="https://www.google.com/maps/dir/?api=1&destination=505+Main+St+Chula+Vista+CA+91911" target="_blank" rel="noopener">Visit Chula Vista HQ</a></li>
+              <li><a href="${basePath}request-quote.html#contact">Schedule a walkthrough</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Company & Resources</h4>
+            <ul>
+              <li><a href="${basePath}company.html">About OPC</a></li>
+              <li><a href="${basePath}resources/index.html">Resources</a></li>
+              <li><a href="${basePath}resources/index.html">Documentation & insights</a></li>
+              <li><a href="${basePath}how-it-works.html">Engagement SLAs</a></li>
+              <li><a href="${basePath}request-quote.html#contact">Service intake form</a></li>
+              <li><a href="${basePath}resources/case-snapshot.html">Case snapshots</a></li>
+              <li><a href="${basePath}resources/one-pager.html">Program one-pager</a></li>
+            </ul>
+          </div>
+          <span class="footer-meta small">© 2025 OPC Warehouse Solutions</span>
         </div>
       </div>
     </div>
@@ -119,7 +112,7 @@ function createCTASection() {
             </div>
           </div>
         </div>
-        <form>
+        <form action="https://formspree.io/f/xdkvjlrj" method="POST">
           <label class="sr-only" for="contact-name">Name</label>
           <input id="contact-name" type="text" name="name" placeholder="Name" required>
           <label class="sr-only" for="contact-email">Work email</label>
@@ -162,6 +155,35 @@ function injectCommon(active) {
   if (header) header.innerHTML = createHeader(active);
   if (footer) footer.innerHTML = createFooter();
   if (cta) cta.innerHTML = createCTASection();
+
+  setupNavigation();
+}
+
+function setupNavigation() {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+
+  const nav = header.querySelector('nav');
+  const toggle = header.querySelector('.nav-toggle');
+  if (!nav || !toggle) return;
+
+  const closeMenu = () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  };
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.classList.toggle('nav-open', isOpen);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 980) {
+      closeMenu();
+    }
+  });
 }
 
 // Accessibility helper
