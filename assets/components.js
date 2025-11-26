@@ -19,10 +19,6 @@ function createHeader(active) {
     <div class="nav-container">
       <a class="logo" href="${basePath}index.html" aria-label="OPC Warehouse Solutions home">
         <img src="${basePath}assets/WSlogo.svg" alt="Warehouse Solutions logo" loading="lazy">
-        <div class="logo-lockup">
-          <strong>OPC</strong>
-          <span>Warehouse Solutions</span>
-        </div>
       </a>
       <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
         <span></span>
@@ -62,15 +58,7 @@ function createFooter() {
             <li><a href="${basePath}solutions.html">Solutions & Services</a></li>
             <li><a href="${basePath}industries.html">Industries & Use Cases</a></li>
             <li><a href="${basePath}how-it-works.html">How Engagement Works</a></li>
-            <li><a href="${basePath}request-quote.html#contact">Schedule a Walkthrough</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="${basePath}company.html">About OPC</a></li>
-            <li><a href="${basePath}resources/index.html">Resources</a></li>
-            <li><a href="${basePath}sitemap.xml">Sitemap</a></li>
+            <li><a href="${basePath}request-quote.html">Request a quote</a></li>
           </ul>
         </div>
         <div class="footer-stack">
@@ -85,9 +73,11 @@ function createFooter() {
           <div>
             <h4>Company & Resources</h4>
             <ul>
-              <li><a href="${basePath}resources/index.html">Documentation & Insights</a></li>
+              <li><a href="${basePath}company.html">About OPC</a></li>
+              <li><a href="${basePath}resources/index.html">Resources</a></li>
+              <li><a href="${basePath}resources/index.html">Documentation & insights</a></li>
               <li><a href="${basePath}how-it-works.html">Engagement SLAs</a></li>
-              <li><a href="${basePath}request-quote.html">Service Intake Form</a></li>
+              <li><a href="${basePath}request-quote.html#contact">Service intake form</a></li>
               <li><a href="${basePath}resources/case-snapshot.html">Case snapshots</a></li>
               <li><a href="${basePath}resources/one-pager.html">Program one-pager</a></li>
             </ul>
