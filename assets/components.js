@@ -40,11 +40,11 @@ function createFooter() {
             <p>Operations partner for inventory control, kitting, refurbishment, and logistics programs.</p>
           </div>
         </div>
-        <p class="footer-meta">Chula Vista, California — nationwide coverage<br>Safety, QA, and visibility-first execution.</p>
+        <p class="footer-meta">Based in Chula Vista, California — providing nationwide coverage<br>Safety, quality assurance, and visibility-first execution.</p>
         <div class="footer-badges">
-          <span class="badge">On-time &gt;98%</span>
+          <span class="badge">On-time performance &gt;98%</span>
           <span class="badge">Visibility-first logistics</span>
-          <span class="badge">Safety & QA discipline</span>
+          <span class="badge">Safety and quality-assurance discipline</span>
         </div>
       </div>
       <div class="footer-columns">
@@ -53,8 +53,8 @@ function createFooter() {
           <ul>
             <li><a href="${basePath}solutions.html">Solutions & Services</a></li>
             <li><a href="${basePath}industries.html">Industries & Use Cases</a></li>
-            <li><a href="${basePath}how-it-works.html">How engagement works</a></li>
-            <li><a href="${basePath}request-quote.html#contact">Schedule a walkthrough</a></li>
+            <li><a href="${basePath}how-it-works.html">How Engagement Works</a></li>
+            <li><a href="${basePath}request-quote.html#contact">Schedule a Walkthrough</a></li>
           </ul>
         </div>
         <div>
@@ -77,9 +77,9 @@ function createFooter() {
         <div>
           <h4>Support</h4>
           <ul>
-            <li><a href="${basePath}resources/index.html">Documentation & insights</a></li>
+            <li><a href="${basePath}resources/index.html">Documentation & Insights</a></li>
             <li><a href="${basePath}how-it-works.html">Engagement SLAs</a></li>
-            <li><a href="${basePath}request-quote.html">Service intake form</a></li>
+            <li><a href="${basePath}request-quote.html">Service Intake Form</a></li>
             <li><a href="${basePath}resources/case-snapshot.html">Case snapshots</a></li>
             <li><a href="${basePath}resources/one-pager.html">Program one-pager</a></li>
             <li><a href="${basePath}resources/whitepaper.html">Logistics whitepaper</a></li>
